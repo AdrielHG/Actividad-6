@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Note;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,14 +15,13 @@ class NoteFactory extends Factory
      * @return array<string, mixed>
      */
 
-    protected $model = Note::class;
-
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence,
-            'content' => $this->faker->paragraph,
-            'folder_id' => \App\Models\Folder::factory(), // Assuming each note belongs to a folder
+            'title' => fake()->sentence(),
+            'content' => fake()->paragraph(),
+            'user_id' => 1,
+            'folder_id' => 1
         ];
     }
 }

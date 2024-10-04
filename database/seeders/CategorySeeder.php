@@ -13,11 +13,14 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
+
         $categories = ['Work', 'Personal', 'Study', 'Ideas', 'Misc'];
 
         foreach ($categories as $category) {
             Category::create([
                 'name' => $category,
+                'color' => 'ff0000', 
+                'user_id' => 1
             ]);
         }
     }
